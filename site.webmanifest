@@ -1,0 +1,10 @@
+{
+  "name": "បន្លា · Bonla",
+  "short_name": "បន្លា",
+  "lang": "km",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F5EEDB",
+  "theme_color": "#0D2015",
+  "icons": [{ "src": "assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
