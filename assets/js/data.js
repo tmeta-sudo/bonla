@@ -174,7 +174,9 @@ window.BONLA = {
       step4: 'ដឹកដល់ទ្វារផ្ទះ', step4d: '{zone} · {eta}',
       stepNote: 'ជំហានទី ៣ និងទី ៤ ហាងនឹងជូនដំណឹងអ្នកដោយផ្ទាល់។',
       sendVia: 'ផ្ញើការកុម្ម៉ង់តាម {ch}', sendCopy: 'ចម្លងសារកុម្ម៉ង់', noChannel: 'ហាងមិនទាន់បានភ្ជាប់ Telegram ឬលេខទូរស័ព្ទទេ។ សារកុម្ម៉ង់នឹងត្រូវចម្លងទុក ដើម្បីផ្ញើពេលក្រោយ។',
-      sms: 'SMS', dark: 'ពណ៌ងងឹត', contact: 'ទាក់ទង', resend: 'ផ្ញើម្តងទៀត'
+      sms: 'SMS', dark: 'ពណ៌ងងឹត', contact: 'ទាក់ទង', resend: 'ផ្ញើម្តងទៀត',
+      cdD: 'ថ្ងៃ', cdH: 'ម៉ោង', cdM: 'នាទី', cdS: 'វិនាទី',
+      liveK: 'ពេញរដូវហើយ', liveT: 'ទុរេនកំពតស្រស់ៗ មកដល់ហើយ', liveS: 'ផ្លែបេះថ្មីរៀងរាល់ព្រឹក។ កុម្ម៉ង់មុនម៉ោង ១២ ថ្ងៃត្រង់ ទទួលបានថ្ងៃនេះ។', liveCta: 'កុម្ម៉ង់ឥឡូវ', liveLeft: 'រដូវនៅសល់',
     },
     en: {
       add: 'Add', added: 'Added', perkg: '/ kg', perbox: '/ box', unitkg: 'kg', unitbox: 'box',
@@ -200,7 +202,9 @@ window.BONLA = {
       step4: 'Delivered to your door', step4d: '{zone} · {eta}',
       stepNote: 'The shop will update you directly on steps 3 and 4.',
       sendVia: 'Send order via {ch}', sendCopy: 'Copy order message', noChannel: 'The shop has not connected Telegram or a phone number yet. Your order message will be copied so you can send it later.',
-      sms: 'SMS', dark: 'Dark mode', contact: 'Contact', resend: 'Send again'
+      sms: 'SMS', dark: 'Dark mode', contact: 'Contact', resend: 'Send again',
+      cdD: 'days', cdH: 'hours', cdM: 'min', cdS: 'sec',
+      liveK: 'In season now', liveT: 'Fresh Kampot durian is here', liveS: 'Picked fresh every morning. Order before noon for same-day delivery.', liveCta: 'Order now', liveLeft: 'Season ends in',
     }
   },
 
@@ -209,6 +213,7 @@ window.BONLA = {
     'a11y.skip': 'Skip to varieties',
     'nav.varieties': 'Varieties', 'nav.finder': 'Flavor finder', 'nav.season': 'Season', 'nav.culture': 'Culture', 'nav.order': 'Order', 'nav.cart': 'Basket',
     'tab.home': 'Home', 'tab.orders': 'Orders', 'tab.cart': 'Basket', 'tab.more': 'More',
+    'promo.kicker': 'Pre-order', 'promo.title': 'Kampot durian season starts in', 'promo.sub': 'Reserve the first fruit of the season now and we will pick the best ones for you first.', 'promo.cta': 'Pre-order now',
     'ui.back': 'Back', 'ui.inc': 'Add one', 'ui.dec': 'Remove one',
     'pd.about': 'About', 'pd.taste': 'Taste profile', 'pd.keep': 'How to keep it', 'pd.similar': 'Similar products', 'pd.add': 'Add to basket',
     'cart.deliver': 'Delivery details', 'cart.addrPh': 'House no., street, sangkat, khan', 'cart.loc': 'Attach my current location', 'cart.checkout': 'Checkout',

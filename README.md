@@ -38,6 +38,7 @@ On phones the store works like an app, with a bottom bar: **Home · Orders · Ba
 - **Culture**: the Durian Roundabout in Kampot, sharing durian, tree-ripening, and a "choose like a market seller" guide.
 - **SEO ready**: Open Graph tags, `Store` structured data, sitemap, robots.txt, 404 page.
 - **Phone-first navigation**: an app-style bottom tab bar (Home, Varieties, Taste, Season, Basket) that highlights the section you are in, a header that hides while you scroll down, and swipeable product and culture rows.
+- **Motion**: staggered scroll reveals, photo shimmer and fade-in, the product photo growing into its page, the photo flying into the basket with a small burst and phone vibration, ripples on press, count-up prices, a live season countdown, and a gentle hero glow with drifting pollen. Everything is turned off for people who choose reduced motion.
 - **Light / dark mode**: follows the phone or computer setting by default; the header button switches it and the choice is remembered.
 - **Smooth and accessible**: CSS scroll-driven reveals, View Transitions, `<dialog>` basket with focus handling, visible focus states, `prefers-reduced-motion` support.
 
