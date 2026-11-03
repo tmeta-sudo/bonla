@@ -1357,3 +1357,15 @@ html.js :is(.card__art, .mini__img, .ccard__fig, .band__fig, .season__fig, .matc
   .pollen, .promo__glow, .hero__visual::before { display: none; }
   .btn--shine::after, .hero__cta .btn--gold::after, .buybar__btn::after { display: none; }
 }
+
+/* countdown: size digits from the clock's own width so Khmer numerals never overflow */
+.promo__clock { container-type: inline-size; min-width: 0; align-self: center; }
+.cd { min-width: 0; overflow: hidden; padding-inline: 4px; }
+.cd__v { font-size: clamp(20px, 9cqi, 46px); white-space: nowrap; letter-spacing: -.02em; }
+.cd__l { white-space: nowrap; font-size: clamp(11px, 3.2cqi, 13px); }
+@media (max-width: 1100px) and (min-width: 821px) {
+  .promo__card { grid-template-columns: 1fr; padding-right: clamp(24px, 26vw, 300px); }
+  .promo__clock { max-width: 460px; }
+}
+.promo__clock { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+.cd__v { font-size: clamp(18px, 8cqi, 44px); }
