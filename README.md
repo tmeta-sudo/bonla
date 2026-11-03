@@ -31,7 +31,7 @@ The basket and form are saved in the customer's browser, so a refresh doesn't lo
 ## Features
 
 - **Full Khmer**: Kantumruy Pro (300–700 + italic), Khmer-tuned line heights, Khmer numerals (០១២៣…) for prices, counts and dates when Khmer is selected. KM / EN switch is remembered.
-- **Real photography** with responsive WebP (`srcset`), lazy loading and fixed dimensions (no layout shift). About 1.9 MB of photos in total, and a phone only downloads the small sizes.
+- **Real photography** with responsive WebP (`srcset`), lazy loading and fixed dimensions (no layout shift). Phones only download the small sizes (about 40–120 KB each).
 - **Flavor finder**: sweetness, aroma and texture sliders rank the varieties live.
 - **Khmer harvest calendar** with the current month marked.
 - **Culture**: the Durian Roundabout in Kampot, sharing durian, tree-ripening, and a "choose like a market seller" guide.
