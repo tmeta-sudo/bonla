@@ -56,6 +56,7 @@
     renderOrderInfo();
     renderCredits();
     renderCart();
+    if ($('#themeBtn')) paintThemeBtn();
   }
 
   /* ---------- images ---------- */
@@ -341,6 +342,22 @@
     const el = $('#toast'); el.textContent = msg; el.classList.add('is-on');
     clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('is-on'), 2400);
   }
+
+  /* ---------- theme (system by default, remembered once chosen) ---------- */
+  const darkMQ = matchMedia('(prefers-color-scheme: dark)');
+  const root = document.documentElement;
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : darkMQ.matches;
+  function paintThemeBtn() {
+    const b = $('#themeBtn');
+    b.setAttribute('aria-label', isDark() ? t('toLight') : t('toDark'));
+    b.setAttribute('aria-pressed', String(isDark()));
+  }
+  $('#themeBtn').addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    const go = () => { root.dataset.theme = next; store.set('theme', next); paintThemeBtn(); };
+    document.startViewTransition && !reduced ? document.startViewTransition(go) : go();
+  });
+  darkMQ.addEventListener?.('change', paintThemeBtn);
 
   /* ---------- language ---------- */
   $$('.lang button').forEach(b => b.addEventListener('click', () => {

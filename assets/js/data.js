@@ -148,7 +148,8 @@ window.BONLA = {
       addedToast: '{n} ត្រូវបានដាក់ក្នុងកន្ត្រក', copied: 'បានចម្លងសារបញ្ជាទិញ', copyFail: 'ចម្លងមិនបាន សូមសាកម្តងទៀត',
       needInfo: 'សូមបំពេញឈ្មោះ និងលេខទូរស័ព្ទ', emptyCart: 'សូមដាក់ទុរេនក្នុងកន្ត្រកជាមុនសិន',
       msgHello: 'សួស្តី {shop}! ខ្ញុំចង់បញ្ជាទិញ៖', msgDelivery: 'ដឹកទៅ', msgWhen: 'ពេលទទួល', msgTotal: 'សរុបប្រហាក់ប្រហែល', msgName: 'ឈ្មោះ', msgPhone: 'ទូរស័ព្ទ', msgAddr: 'អាសយដ្ឋាន',
-      tg: 'Telegram', phone: 'ទូរស័ព្ទ', photoBy: 'រូបថត', for: 'សម្រាប់'
+      tg: 'Telegram', phone: 'ទូរស័ព្ទ', photoBy: 'រូបថត', for: 'សម្រាប់',
+      toDark: 'ប្តូរទៅពណ៌ងងឹត', toLight: 'ប្តូរទៅពណ៌ភ្លឺ'
     },
     en: {
       add: 'Add', added: 'Added', perkg: '/ kg', perbox: '/ box', unitkg: 'kg', unitbox: 'box',
@@ -161,7 +162,8 @@ window.BONLA = {
       addedToast: '{n} added to your basket', copied: 'Order copied', copyFail: "Couldn't copy. Please try again.",
       needInfo: 'Please add your name and phone number', emptyCart: 'Add a durian to your basket first',
       msgHello: 'Hello {shop}! I would like to order:', msgDelivery: 'Deliver to', msgWhen: 'When', msgTotal: 'Estimated total', msgName: 'Name', msgPhone: 'Phone', msgAddr: 'Address',
-      tg: 'Telegram', phone: 'Phone', photoBy: 'Photo', for: 'for'
+      tg: 'Telegram', phone: 'Phone', photoBy: 'Photo', for: 'for',
+      toDark: 'Switch to dark mode', toLight: 'Switch to light mode'
     }
   },
 
