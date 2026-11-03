@@ -67,7 +67,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         <span id="langLabel">EN</span>
       </button>
-      <a class="hbtn hbtn--tg" id="tgBtn" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+      <a class="hbtn hbtn--tg" id="tgBtn" href="#order" target="_blank" rel="noopener" aria-label="Telegram" hidden>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 4.2L2.9 11.3c-.8.3-.8 1.4 0 1.7l4.5 1.6 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6l3-15.3c.2-.9-.6-1.6-1.4-1.3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7.4 14.6l9.8-6.3-6.6 7.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg>
       </a>
       <button type="button" class="cart-btn" id="cartOpen" aria-haspopup="dialog">
@@ -79,27 +79,23 @@
   </div>
 </header>
 
-<nav class="tabbar" id="tabbar" aria-label="Quick">
-  <a class="tab is-active" href="#top" data-sec="top">
+<nav class="tabbar" id="tabbar" aria-label="App">
+  <a class="tab is-active" href="#top" data-tab="home">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5L12 3.5l8.5 7V19a1.5 1.5 0 0 1-1.5 1.5h-4v-6h-6v6H5A1.5 1.5 0 0 1 3.5 19z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
     <span data-i18n="tab.home">ដើម</span>
   </a>
-  <a class="tab" href="#varieties" data-sec="varieties">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
-    <span data-i18n="tab.var">ពូជ</span>
-  </a>
-  <a class="tab" href="#finder" data-sec="finder">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
-    <span data-i18n="tab.finder">រសជាតិ</span>
-  </a>
-  <a class="tab" href="#season" data-sec="season">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="15" r="1.6" fill="currentColor"/></svg>
-    <span data-i18n="tab.season">រដូវ</span>
-  </a>
-  <button type="button" class="tab tab--cart" id="tabCart" aria-haspopup="dialog">
+  <button type="button" class="tab" data-tab="orders" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 3.5v2h6v-2M8.5 11h7M8.5 15h4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-i18n="tab.orders">កុម្ម៉ង់</span>
+  </button>
+  <button type="button" class="tab tab--cart" data-tab="cart" id="tabCart" aria-haspopup="dialog">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10V7a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     <span data-i18n="tab.cart">កន្ត្រក</span>
     <span class="tab__badge" id="tabCount" hidden>០</span>
+  </button>
+  <button type="button" class="tab" data-tab="more" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+    <span data-i18n="tab.more">ច្រើនទៀត</span>
   </button>
 </nav>
 
@@ -303,7 +299,7 @@
           <h2 data-i18n="order.title">កុម្ម៉ង់ថ្ងៃនេះ ទទួលបានថ្ងៃនេះ</h2>
           <ol class="howto">
             <li data-i18n="order.h1">ដាក់ទុរេនក្នុងកន្ត្រក</li>
-            <li data-i18n="order.h2">ផ្ញើការបញ្ជាទិញតាម Telegram</li>
+            <li data-i18n="order.h2">ផ្ញើការកុម្ម៉ង់មកហាង</li>
             <li data-i18n="order.h3">យើងថ្លឹង ហើយផ្ញើ KHQR ឲ្យអ្នកបង់</li>
             <li data-i18n="order.h4">ទទួលទុរេនស្រស់ដល់ផ្ទះ</li>
           </ol>
@@ -320,8 +316,8 @@
               <li data-i18n="order.pay1">ស្កេន KHQR (ABA, ACLEDA, Wing)</li>
               <li data-i18n="order.pay2">ប្រាក់សុទ្ធពេលទទួល</li>
             </ul>
-            <h3 data-i18n="order.contact">ទាក់ទង</h3>
-            <ul class="plain" id="contact"></ul>
+            <div id="contactBlock" hidden><h3 data-i18n="order.contact">ទាក់ទង</h3>
+            <ul class="plain" id="contact"></ul></div>
           </div>
         </div>
       </div>
@@ -352,36 +348,90 @@
   </div>
 </footer>
 
-<!-- CART DRAWER -->
-<dialog class="drawer" id="cart" aria-labelledby="cartTitle">
-  <div class="drawer__head">
-    <h2 id="cartTitle" data-i18n="cart.title">កន្ត្រករបស់អ្នក</h2>
-    <button type="button" class="icon-btn" id="cartClose" data-i18n-aria="cart.close" aria-label="បិទ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+<!-- PRODUCT SHEET -->
+<dialog class="sheet sheet--product" id="productSheet" aria-labelledby="pTitle">
+  <div class="sheet__scroll">
+    <div class="pd__media">
+      <img id="pImg" src="assets/photos/kampot-900.webp" alt="" width="800" height="534" decoding="async">
+      <button type="button" class="round-btn pd__back" data-close data-i18n-aria="ui.back" aria-label="ត្រឡប់"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="pd__badge" id="pBadge" hidden></span>
+    </div>
+    <div class="pd__body">
+      <div class="pd__head">
+        <div class="pd__titles">
+          <h2 id="pTitle">ទុរេនកំពត</h2>
+          <p class="pd__alt" id="pAlt"></p>
+          <p class="stock" id="pStock"></p>
+        </div>
+        <div class="stepper stepper--lg" role="group" aria-labelledby="pTitle">
+          <button type="button" id="pDec" data-i18n-aria="ui.dec" aria-label="ដកមួយ">−</button>
+          <output id="pQty">១ គ.ក</output>
+          <button type="button" id="pInc" data-i18n-aria="ui.inc" aria-label="បន្ថែមមួយ">+</button>
+        </div>
+      </div>
+      <section class="pd__sec">
+        <h3 data-i18n="pd.about">អំពីផលិតផល</h3>
+        <p id="pDesc"></p>
+        <ul class="tags" id="pTags"></ul>
+      </section>
+      <section class="pd__sec">
+        <h3 data-i18n="pd.taste">រសជាតិ</h3>
+        <dl class="meters meters--lg" id="pMeters"></dl>
+      </section>
+      <section class="pd__sec">
+        <h3 data-i18n="pd.keep">របៀបរក្សាទុក</h3>
+        <p id="pKeep"></p>
+      </section>
+      <section class="pd__sec">
+        <h3 data-i18n="pd.similar">ផលិតផលស្រដៀង</h3>
+        <div class="mini-row" id="pSimilar"></div>
+      </section>
+    </div>
   </div>
-  <div class="drawer__body">
+  <div class="buybar">
+    <div class="buybar__price"><strong id="pPrice">៤៥,០០០៛</strong><span id="pUnit">/ គីឡូក្រាម</span></div>
+    <button type="button" class="btn btn--gold buybar__btn" id="pAdd"><span data-i18n="pd.add">ដាក់ក្នុងកន្ត្រក</span></button>
+  </div>
+</dialog>
+
+<!-- CART SHEET -->
+<dialog class="sheet" id="cart" aria-labelledby="cartTitle">
+  <header class="sheet__head">
+    <button type="button" class="round-btn round-btn--ghost" data-close data-i18n-aria="ui.back" aria-label="ត្រឡប់"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <h2 id="cartTitle" data-i18n="cart.title">កន្ត្រករបស់អ្នក</h2>
+    <span class="sheet__spacer"></span>
+  </header>
+  <div class="sheet__body">
     <ul class="lines" id="cartLines"></ul>
     <div class="empty" id="cartEmpty" hidden>
       <img class="empty__img" src="assets/photos/pulp-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async">
       <p data-i18n="cart.empty">កន្ត្រករបស់អ្នកនៅទទេ</p>
-      <a class="btn btn--gold btn--sm" href="#varieties" id="emptyBrowse" data-i18n="cart.browse">មើលពូជទុរេន</a>
+      <a class="btn btn--gold btn--sm" href="#varieties" data-close data-i18n="cart.browse">មើលពូជទុរេន</a>
     </div>
     <form class="checkout" id="checkout" novalidate>
+      <h3 class="checkout__h" data-i18n="cart.deliver">ព័ត៌មានដឹកជញ្ជូន</h3>
       <div class="field">
         <label for="zone" data-i18n="cart.zone">តំបន់ដឹក</label>
         <select id="zone"></select>
       </div>
-      <div class="field">
-        <label for="cName" data-i18n="cart.name">ឈ្មោះ</label>
-        <input id="cName" autocomplete="name" required>
-      </div>
-      <div class="field">
-        <label for="cPhone" data-i18n="cart.phone">លេខទូរស័ព្ទ</label>
-        <input id="cPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="012 345 678" required>
+      <div class="field-row">
+        <div class="field">
+          <label for="cName" data-i18n="cart.name">ឈ្មោះ</label>
+          <input id="cName" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="cPhone" data-i18n="cart.phone">លេខទូរស័ព្ទ</label>
+          <input id="cPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="012 345 678" required>
+        </div>
       </div>
       <div class="field">
         <label for="cAddr" data-i18n="cart.addr">អាសយដ្ឋាន</label>
-        <textarea id="cAddr" rows="2" autocomplete="street-address"></textarea>
+        <textarea id="cAddr" rows="2" autocomplete="street-address" data-i18n-ph="cart.addrPh" placeholder="ផ្ទះលេខ ផ្លូវ សង្កាត់ ខណ្ឌ"></textarea>
       </div>
+      <button type="button" class="loc-btn" id="locBtn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span id="locLabel" data-i18n="cart.loc">ភ្ជាប់ទីតាំងបច្ចុប្បន្នរបស់ខ្ញុំ</span>
+      </button>
       <div class="field">
         <label for="cWhen" data-i18n="cart.when">ពេលចង់ទទួល</label>
         <select id="cWhen"></select>
@@ -389,15 +439,51 @@
       <p class="form-err" id="formErr" role="alert" hidden></p>
     </form>
   </div>
-  <div class="drawer__foot" id="cartFoot">
+  <footer class="sheet__foot" id="cartFoot">
     <dl class="sum">
       <dt data-i18n="cart.subtotal">សរុបរង (ប្រហាក់ប្រហែល)</dt><dd id="sumSub">០៛</dd>
       <dt data-i18n="cart.delivery">ថ្លៃដឹក</dt><dd id="sumDel">០៛</dd>
-      <dt class="sum__total" data-i18n="cart.total">សរុប</dt><dd class="sum__total" id="sumTotal">០៛</dd>
     </dl>
-    <a class="btn btn--gold btn--block" id="sendTelegram" href="https://t.me/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 13l8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="cart.send">ផ្ញើការបញ្ជាទិញតាម Telegram</span></a>
-    <button type="button" class="btn btn--line btn--block" id="copyOrder" data-i18n="cart.copy">ចម្លងសារបញ្ជាទិញ</button>
-    <p class="drawer__note" data-i18n="cart.note">យើងនឹងថ្លឹងផ្លែ ហើយផ្ញើតម្លៃពិត និង KHQR ឲ្យអ្នកបង់ប្រាក់។</p>
+    <p class="total-line"><span data-i18n="cart.total">សរុបទាំងអស់</span><strong id="sumTotal">០៛</strong></p>
+    <button type="button" class="btn btn--dark btn--block" id="checkoutBtn"><span data-i18n="cart.checkout">បញ្ជាទិញ</span></button>
+    <p class="sheet__note" id="cartNote" data-i18n="cart.note">យើងនឹងថ្លឹងផ្លែ ហើយផ្ញើតម្លៃពិត និង KHQR ឲ្យអ្នកបង់ប្រាក់។</p>
+  </footer>
+</dialog>
+
+<!-- ORDERS SHEET -->
+<dialog class="sheet" id="ordersSheet" aria-labelledby="ordersTitle">
+  <header class="sheet__head">
+    <button type="button" class="round-btn round-btn--ghost" data-close data-i18n-aria="ui.back" aria-label="ត្រឡប់"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <h2 id="ordersTitle" data-i18n="orders.title">ការកុម្ម៉ង់របស់ខ្ញុំ</h2>
+    <span class="sheet__spacer"></span>
+  </header>
+  <div class="sheet__body">
+    <div id="ordersView"></div>
+  </div>
+</dialog>
+
+<!-- MORE SHEET -->
+<dialog class="sheet" id="moreSheet" aria-labelledby="moreTitle">
+  <header class="sheet__head">
+    <button type="button" class="round-btn round-btn--ghost" data-close data-i18n-aria="ui.back" aria-label="ត្រឡប់"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <h2 id="moreTitle" data-i18n="more.title">ច្រើនទៀត</h2>
+    <span class="sheet__spacer"></span>
+  </header>
+  <div class="sheet__body">
+    <h3 class="menu__h" data-i18n="more.settings">ការកំណត់</h3>
+    <ul class="menu">
+      <li><button type="button" class="menu__row" id="moreTheme"><span class="menu__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="menu__t" data-i18n="more.dark">ពណ៌ងងឹត</span><span class="switch" id="themeSwitch" aria-hidden="true"></span></button></li>
+      <li><button type="button" class="menu__row" id="moreLang"><span class="menu__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="menu__t" data-i18n="more.lang">ភាសា</span><span class="menu__v" id="moreLangV">ខ្មែរ</span></button></li>
+    </ul>
+    <h3 class="menu__h" data-i18n="more.explore">ស្វែងយល់</h3>
+    <ul class="menu">
+      <li><a class="menu__row" href="#finder" data-close><span class="menu__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="menu__t" data-i18n="nav.finder">រករសជាតិ</span><span class="menu__chev" aria-hidden="true"></span></a></li>
+      <li><a class="menu__row" href="#season" data-close><span class="menu__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="menu__t" data-i18n="nav.season">រដូវ</span><span class="menu__chev" aria-hidden="true"></span></a></li>
+      <li><a class="menu__row" href="#culture" data-close><span class="menu__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20v-8M18 20v-8M10 20v-8M14 20v-8M3 12h18L12 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span class="menu__t" data-i18n="nav.culture">វប្បធម៌</span><span class="menu__chev" aria-hidden="true"></span></a></li>
+      <li><a class="menu__row" href="#choose" data-close><span class="menu__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span class="menu__t" data-i18n="footer.choose">របៀបរើស</span><span class="menu__chev" aria-hidden="true"></span></a></li>
+      <li><a class="menu__row" href="#order" data-close><span class="menu__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="17.5" r="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="menu__t" data-i18n="order.kicker">ដឹកជញ្ជូន និងបង់ប្រាក់</span><span class="menu__chev" aria-hidden="true"></span></a></li>
+    </ul>
+    <div id="moreContact"></div>
   </div>
 </dialog>
 

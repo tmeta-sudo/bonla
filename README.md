@@ -8,25 +8,26 @@ A Khmer durian store for tree-ripened **Kampot durian** (ទុរេនកំ�
 
 ## Before you take real orders
 
-Open `assets/js/data.js` and set:
+Open `assets/js/data.js` and set at least one order channel in `config`:
 
 | Setting | What it does |
 | --- | --- |
-| `config.telegram` | Your Telegram username (no @). The order button opens a chat with you, with the order prefilled. |
-| `config.phone` | Shown in the Contact block, tappable on phones. |
-| `products[].price` | Price in riel (per kg for whole fruit, per box for treats). The current prices are placeholders. |
-| `zones` | Delivery areas, fees and delivery times. |
-| `season` | Harvest months (0 off, 1 early/late, 2 peak). |
+| `telegram` | Your Telegram username (no @). Checkout opens a chat with you with the order already typed. A Telegram button also appears in the header. |
+| `phone` | Your phone number. Shown under Contact; if there is no Telegram, checkout opens an SMS with the order. |
+| `products[].price` | Price in riel (per kg for whole fruit, per box for treats). Current prices are placeholders. |
+| `zones`, `when` | Delivery areas, fees, times and delivery-time choices. |
+| `season` | Harvest months (0 off, 1 early/late, 2 peak). Whole fruit shows "Pre-order" outside the season. |
 
-Push to `main` and the site redeploys automatically.
+Both channels are empty right now, so all Telegram and phone links are hidden and checkout copies the order message instead. Push to `main` and the site redeploys automatically.
 
-## How ordering works
+## How ordering works (app screens)
 
-1. The customer adds durian to the basket and picks a delivery area and time.
-2. **Send order on Telegram** opens a chat with your account with the full order already typed (it is also copied to the clipboard, in case their Telegram app ignores the prefill).
-3. You weigh the fruit and reply with the exact price and a KHQR code.
+On phones the store works like an app, with a bottom bar: **Home · Orders · Basket · More**.
 
-The basket and form are saved in the customer's browser, so a refresh doesn't lose their order.
+1. **Product page**: tap any durian to see a large photo, stock status (in stock or pre-order, based on the season), quantity, description, taste profile, how to store it and similar products.
+2. **Basket**: quantities, remove, delivery area, name and phone, address, optional "attach my location" (adds a Google Maps link), delivery time and total.
+3. **Checkout** sends the order through your channel (it is also copied to the clipboard) and saves it on the customer's device with an order number like `BL-1103-4821`.
+4. **Order details** shows the steps: order prepared, sent to the shop, shop weighs it and sends KHQR, delivered. The customer can send it again or reorder in one tap.
 
 ## Features
 
