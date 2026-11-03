@@ -36,6 +36,7 @@ The basket and form are saved in the customer's browser, so a refresh doesn't lo
 - **Khmer harvest calendar** with the current month marked.
 - **Culture**: the Durian Roundabout in Kampot, sharing durian, tree-ripening, and a "choose like a market seller" guide.
 - **SEO ready**: Open Graph tags, `Store` structured data, sitemap, robots.txt, 404 page.
+- **Phone-first navigation**: an app-style bottom tab bar (Home, Varieties, Taste, Season, Basket) that highlights the section you are in, a header that hides while you scroll down, and swipeable product and culture rows.
 - **Light / dark mode**: follows the phone or computer setting by default; the header button switches it and the choice is remembered.
 - **Smooth and accessible**: CSS scroll-driven reveals, View Transitions, `<dialog>` basket with focus handling, visible focus states, `prefers-reduced-motion` support.
 

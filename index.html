@@ -24,9 +24,9 @@
   <link rel="preload" as="image" href="assets/photos/hero-open-560.webp" imagesrcset="assets/photos/hero-open-560.webp 560w, assets/photos/hero-open-1000.webp 922w" imagesizes="(max-width: 820px) 80vw, 460px" fetchpriority="high">
   <script>try{var t=localStorage.getItem('bonla:theme');if(t==='"dark"'||t==='"light"')document.documentElement.dataset.theme=JSON.parse(t)}catch(e){}</script>
   <meta name="color-scheme" content="light dark">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script defer src="assets/js/data.js"></script>
-  <script defer src="assets/js/app.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=dev">
+  <script defer src="assets/js/data.js?v=dev"></script>
+  <script defer src="assets/js/app.js?v=dev"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,25 +49,27 @@
   <div class="nav__in">
     <a class="brand" href="#top" aria-label="Bonla">
       <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 2l2.6 4.3 4.7-1.7.4 5 4.9 1.2-2.1 4.5 3.5 3.6-4.4 2.3.8 5-5-.3L19 30l-3-4-3 4-2.4-4.4-5 .3.8-5-4.4-2.3 3.5-3.6L3.4 10.8l4.9-1.2.4-5 4.7 1.7z" fill="currentColor"/><circle cx="16" cy="16" r="6" fill="#0D2015"/></svg></span>
-      <span class="brand__km">បន្លា</span>
-      <span class="brand__en">BONLA</span>
+      <span class="brand__text"><span class="brand__km">បន្លា</span><span class="brand__en">BONLA</span></span>
     </a>
     <nav class="nav__links" aria-label="Main">
-      <a href="#varieties" data-i18n="nav.varieties">ពូជទុរេន</a>
-      <a href="#finder" data-i18n="nav.finder">រករសជាតិ</a>
-      <a href="#season" data-i18n="nav.season">រដូវ</a>
-      <a href="#culture" data-i18n="nav.culture">វប្បធម៌</a>
-      <a href="#order" data-i18n="nav.order">បញ្ជាទិញ</a>
+      <a href="#varieties" data-sec="varieties" data-i18n="nav.varieties">ពូជទុរេន</a>
+      <a href="#finder" data-sec="finder" data-i18n="nav.finder">រករសជាតិ</a>
+      <a href="#season" data-sec="season" data-i18n="nav.season">រដូវ</a>
+      <a href="#culture" data-sec="culture" data-i18n="nav.culture">វប្បធម៌</a>
+      <a href="#order" data-sec="order" data-i18n="nav.order">បញ្ជាទិញ</a>
     </nav>
     <div class="nav__actions">
-      <button type="button" class="theme-btn" id="themeBtn" aria-label="ប្តូរទៅពណ៌ងងឹត">
+      <button type="button" class="hbtn" id="themeBtn" aria-label="ប្តូរទៅពណ៌ងងឹត">
         <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="km" aria-pressed="true">ខ្មែរ</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
+      <button type="button" class="hbtn hbtn--lang" id="langBtn" lang="en" aria-label="Switch to English">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span id="langLabel">EN</span>
+      </button>
+      <a class="hbtn hbtn--tg" id="tgBtn" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 4.2L2.9 11.3c-.8.3-.8 1.4 0 1.7l4.5 1.6 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6l3-15.3c.2-.9-.6-1.6-1.4-1.3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7.4 14.6l9.8-6.3-6.6 7.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </a>
       <button type="button" class="cart-btn" id="cartOpen" aria-haspopup="dialog">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10V7a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         <span class="cart-btn__label" data-i18n="nav.cart">កន្ត្រក</span>
@@ -76,6 +78,30 @@
     </div>
   </div>
 </header>
+
+<nav class="tabbar" id="tabbar" aria-label="Quick">
+  <a class="tab is-active" href="#top" data-sec="top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5L12 3.5l8.5 7V19a1.5 1.5 0 0 1-1.5 1.5h-4v-6h-6v6H5A1.5 1.5 0 0 1 3.5 19z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <span data-i18n="tab.home">ដើម</span>
+  </a>
+  <a class="tab" href="#varieties" data-sec="varieties">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+    <span data-i18n="tab.var">ពូជ</span>
+  </a>
+  <a class="tab" href="#finder" data-sec="finder">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+    <span data-i18n="tab.finder">រសជាតិ</span>
+  </a>
+  <a class="tab" href="#season" data-sec="season">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="15" r="1.6" fill="currentColor"/></svg>
+    <span data-i18n="tab.season">រដូវ</span>
+  </a>
+  <button type="button" class="tab tab--cart" id="tabCart" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10V7a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <span data-i18n="tab.cart">កន្ត្រក</span>
+    <span class="tab__badge" id="tabCount" hidden>០</span>
+  </button>
+</nav>
 
 <main>
   <!-- HERO -->

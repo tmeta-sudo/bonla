@@ -45,7 +45,11 @@
     $$('[data-i18n]').forEach(el => { const k = el.dataset.i18n; el.innerHTML = en ? (D.en[k] ?? km.text[k]) : km.text[k]; });
     $$('[data-i18n-aria]').forEach(el => { const k = el.dataset.i18nAria; el.setAttribute('aria-label', en ? (D.en[k] ?? km.aria[k]) : km.aria[k]); });
     $$('[data-i18n-alt]').forEach(el => { const k = el.dataset.i18nAlt; el.setAttribute('alt', en ? (D.en[k] ?? km.alt[k]) : km.alt[k]); });
-    $$('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    const lb = $('#langBtn');
+    $('#langLabel').textContent = en ? 'ខ្មែរ' : 'EN';
+    lb.setAttribute('lang', en ? 'km' : 'en');
+    lb.setAttribute('aria-label', en ? 'ប្តូរទៅភាសាខ្មែរ' : 'Switch to English');
+    $('#tgBtn').href = 'https://t.me/' + encodeURIComponent(tgHandle());
     $$('.step__n').forEach((el, i) => { el.textContent = num(i + 1); });
     const from = Math.min(...D.products.filter(p => p.unit === 'kg').map(p => p.price));
     $('#heroFrom').textContent = riel(from);
@@ -79,12 +83,16 @@
     $('#dial').innerHTML = g;
   }
   const stage = $('#heroStage'), hero = $('.hero'), nav = $('#nav');
-  let ticking = false;
+  let ticking = false, lastY = scrollY;
+  const phone = matchMedia('(max-width: 760px)');
   function onScroll() {
     if (ticking) return; ticking = true;
     requestAnimationFrame(() => {
       const y = scrollY;
       nav.classList.toggle('is-scrolled', y > 30);
+      // phones: hide the header while scrolling down, bring it back on the way up
+      if (phone.matches && Math.abs(y - lastY) > 6) { nav.classList.toggle('is-hidden', y > lastY && y > 160); lastY = y; }
+      else if (!phone.matches) nav.classList.remove('is-hidden');
       if (!reduced && y < hero.offsetHeight * 1.2) hero.style.setProperty('--p', Math.min(1, y / hero.offsetHeight).toFixed(4));
       ticking = false;
     });
@@ -218,7 +226,10 @@
   }
   function renderCart() {
     const items = cartItems();
-    $('#cartCount').textContent = num(items.reduce((s, i) => s + i.q, 0));
+    const count = items.reduce((s, i) => s + i.q, 0);
+    $('#cartCount').textContent = num(count);
+    $('#tabCount').textContent = num(count);
+    $('#tabCount').hidden = count === 0;
     $('#cartLines').innerHTML = items.map(({ p, q }) => `
       <li class="line">
         <div class="line__art">${photo(p, '64px')}</div>
@@ -298,6 +309,7 @@
     setTimeout(() => { dlg.close(); dlg.classList.remove('is-closing'); }, 280);
   }
   $('#cartOpen').addEventListener('click', openCart);
+  $('#tabCart').addEventListener('click', openCart);
   $('#orderOpen').addEventListener('click', openCart);
   $('#cartClose').addEventListener('click', closeCart);
   $('#emptyBrowse').addEventListener('click', closeCart);
@@ -307,7 +319,7 @@
   function addToCart(id, from) {
     state.cart[id] = (state.cart[id] || 0) + 1;
     saveCart(); renderCart();
-    const btn = $('#cartOpen');
+    const btn = phone.matches ? $('#tabCart') : $('#cartOpen');
     btn.classList.remove('bump'); void btn.offsetWidth; btn.classList.add('bump');
     toast(t('addedToast').replace('{n}', L(byId[id].name)));
     if (from) {
@@ -360,11 +372,20 @@
   darkMQ.addEventListener?.('change', paintThemeBtn);
 
   /* ---------- language ---------- */
-  $$('.lang button').forEach(b => b.addEventListener('click', () => {
-    if (state.lang === b.dataset.lang) return;
-    state.lang = b.dataset.lang; store.set('lang', state.lang);
+  $('#langBtn').addEventListener('click', () => {
+    state.lang = state.lang === 'km' ? 'en' : 'km'; store.set('lang', state.lang);
     document.startViewTransition && !reduced ? document.startViewTransition(applyLang) : applyLang();
-  }));
+  });
+
+  /* ---------- active section in header links + tab bar ---------- */
+  const secLinks = $$('[data-sec]');
+  const setActive = id => secLinks.forEach(a => a.classList.toggle('is-active', a.dataset.sec === id));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['top', 'varieties', 'finder', 'season', 'culture', 'order'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+  }
 
   applyLang();
 })();

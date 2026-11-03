@@ -171,6 +171,7 @@ window.BONLA = {
   en: {
     'a11y.skip': 'Skip to varieties',
     'nav.varieties': 'Varieties', 'nav.finder': 'Flavor finder', 'nav.season': 'Season', 'nav.culture': 'Culture', 'nav.order': 'Order', 'nav.cart': 'Basket',
+    'tab.home': 'Home', 'tab.var': 'Varieties', 'tab.finder': 'Taste', 'tab.season': 'Season', 'tab.cart': 'Basket',
     'hero.eyebrow': 'Kampot province · grown by Khmer farmers',
     'hero.title': 'The king of fruits, from Kampot orchards to your door',
     'hero.sub': 'Tree-ripened durian, picked by hand every morning and delivered to Phnom Penh the same day.',
